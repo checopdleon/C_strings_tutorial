@@ -10,6 +10,15 @@ int main () {
   /* Codeblock_02:
      initial compiling generated error - 
      "makingStings.c:17:21: error: array type 'char [50]' is not assignable"
+
+     second compiling generated 3 warnings and 2 errors -
+     makingStrings.c:20:23: error: expected expression
+     willThisBeAString = {I am also a string.};
+                      ^
+     makingStrings.c:21:3: warning: implicit declaration of function 'Puts' is invalid in C99
+                         [-Wimplicit-function-declaration]
+     Puts(willThisBeAString);
+     ^
    */
   // initialize the string
   char willThisBeAString[50];
@@ -21,6 +30,21 @@ int main () {
   Puts(willThisBeAString);
 
   /* Codeblock_03:
+     initial compiling generated 2 warninngs and 1 error - 
+     makingStrings.c:26:23: warning: implicitly declaring library function 'malloc' with type
+          'void *(unsigned long)' [-Wimplicit-function-declaration]
+     willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
+                      ^
+     makingStrings.c:26:23: note: include the header <stdlib.h> or explicitly provide a
+          declaration for 'malloc'
+
+     makingStrings.c:26:21: error: array type 'char [50]' is not assignable
+     willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
+     ~~~~~~~~~~~~~~~~~ ^
+
+     makingStrings.c:28:3: warning: implicit declaration of function 'free' is invalid in C99
+                         [-Wimplicit-function-declaration]
+     free (willThisBeAString);
    */
   // declaring a string using pointers
   willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
