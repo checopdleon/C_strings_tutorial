@@ -17,8 +17,15 @@ int main () {
   for(int i = 0; i<100; i++)
     puts("doing something else...");
   // delcare the string
-  willThisBeAString = "I am also a string.";
-  puts(willThisBeAString);
+  willThisBeAString = {I am also a string.};
+  Puts(willThisBeAString);
+
+  /* Codeblock_03:
+   */
+  // declaring a string using pointers
+  willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
+  // freeing up the memory taken up by the string
+  free (willThisBeAString);
   
   return 0;
 }
