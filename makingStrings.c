@@ -26,8 +26,8 @@ int main () {
   for(int i = 0; i<100; i++)
     puts("doing something else...");
   // delcare the string
-  willThisBeAString = {I am also a string.};
-  Puts(willThisBeAString);
+  //  willThisBeAString = {I am also a string.}; commented to compile after adding CodeBlock_03
+  puts(willThisBeAString);
 
   /* Codeblock_03:
      initial compiling generated 2 warninngs and 1 error - 
@@ -45,6 +45,32 @@ int main () {
      makingStrings.c:28:3: warning: implicit declaration of function 'free' is invalid in C99
                          [-Wimplicit-function-declaration]
      free (willThisBeAString);
+
+     SECOND ATTEMPT TO COMPILE  generated 2 warnings and 2 errors
+     makingStrings.c:52:3: error: use of undeclared identifier
+         'willThisBeAnotherString'; did you mean 'willThisBeAString'?
+         willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+	 ^~~~~~~~~~~~~~~~~~~~~~~
+	 willThisBeAString
+
+     makingStrings.c:24:8: note: 'willThisBeAString' declared here
+     char willThisBeAString[50];
+          ^
+     makingStrings.c:52:29: warning: implicitly declaring library function 'malloc'
+                with type 'void *(unsigned long)' [-Wimplicit-function-declaration]
+     willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+                               ^
+     makingStrings.c:52:29: note: include the header <stdlib.h> or explicitly provide
+                                                           a declaration for 'malloc'
+
+     makingStrings.c:52:27: error: array type 'char [50]' is not assignable
+     willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+     ~~~~~~~~~~~~~~~~~~~~~~~ ^
+
+     makingStrings.c:54:3: warning: implicit declaration of function 'free' is
+                              invalid in C99 [-Wimplicit-function-declaration]
+     free (willThisBeAString);
+     ^
    */
   // declaring a string using pointers.
   // Initially I had used 'willThisBeAString' initialized above,
