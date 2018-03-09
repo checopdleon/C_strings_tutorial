@@ -46,8 +46,10 @@ int main () {
                          [-Wimplicit-function-declaration]
      free (willThisBeAString);
    */
-  // declaring a string using pointers
-  willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
+  // declaring a string using pointers.
+  // Initially I had used 'willThisBeAString' initialized above,
+  // but now I'm declaring and initializing in the same line
+  willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
   // freeing up the memory taken up by the string
   free (willThisBeAString);
   
