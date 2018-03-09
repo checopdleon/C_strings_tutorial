@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main () {
   /* Codeblock_01: Compiled and printed out.
@@ -71,11 +72,17 @@ int main () {
                               invalid in C99 [-Wimplicit-function-declaration]
      free (willThisBeAString);
      ^
+
+     THIRD ATTEMPT TO COMPILE  generated 1 error
+     makingStrings.c:79:8: error: array initializer must be an initializer list or string
+      literal
+     char willThisBeAnotherString[] = malloc( sizeof(*willThisBeAString) * 256);
+          ^
    */
   // declaring a string using pointers.
   // Initially I had used 'willThisBeAString' initialized above,
   // but now I'm declaring and initializing in the same line.
-  char willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+  char willThisBeAnotherString[] = malloc( sizeof(*willThisBeAString) * 256);
   // freeing up the memory taken up by the string
   free (willThisBeAString);
   
