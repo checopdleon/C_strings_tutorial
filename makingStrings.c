@@ -74,8 +74,8 @@ int main () {
    */
   // declaring a string using pointers.
   // Initially I had used 'willThisBeAString' initialized above,
-  // but now I'm declaring and initializing in the same line
-  willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+  // but now I'm declaring and initializing in the same line.
+  char willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
   // freeing up the memory taken up by the string
   free (willThisBeAString);
   
