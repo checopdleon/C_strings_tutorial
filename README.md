@@ -28,7 +28,7 @@ And now I can use it as if it were an array.  Just remember to release the memor
   <li> Returns a string if a string is successfully read from either the file or the stdin.</li>
 </ul>
 </p>
-<h4>HOW FGETS WORKS</h4>
+<h4>How fgets works</h4>
 <p>
 It reads input until either the user hits enter or the buffer is full. Then it reads all the characters except for the enter, or in the case it becomes full it will read up to (size - 1). Then in either case adds a null escape-character to complete the string it will return.
 </p>
