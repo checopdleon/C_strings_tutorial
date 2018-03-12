@@ -36,7 +36,8 @@ It reads input until either the user hits enter or the buffer is full. Then it r
 
 <h2>To-Do's</h2><p>
 <ul>
-  <li>Next step: read up on dynamically reallocating the stdin buffer. Here are some sites I've found already:
+  <li>Next step: Pick up where I left off on the original tutorial I wrote in the discription; here's the title of the next section to tackle: "Manipulating C strings using string.h"</li>
+  <li>Future step: read up on dynamically reallocating the stdin buffer. Here are some sites I've found already:
     <ul>
       <li>https://stackoverflow.com/questions/39360883/c-fgets-read-line-from-stdin-maximum-length-is-1024</li>
       <li>https://stackoverflow.com/questions/25838676/read-from-stdin-in-c-without-max-buffer-length#25838715</li>
