@@ -15,5 +15,7 @@ hello = malloc(sizeof(*hello) * 256);
 And now I can use it as if it were an array.  Just remember to release the memory afterwards, with: <code>free (hello);</code>
 </p>
 
+<p><strong>malloc</strong> is used assign a set amount of memory for the arrays I'm crating.  What <strong>malloc</strong> does is ask for the memory from the heap.  If there is enough space the os gives me the amount of memory I asked for.
+
 <h2>To-Do's</h2><p>
 [] Read up on string literals and how they behave.
