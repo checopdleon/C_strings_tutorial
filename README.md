@@ -15,20 +15,21 @@ hello = malloc(sizeof(*hello) * 256);
 And now I can use it as if it were an array.  Just remember to release the memory afterwards, with: <code>free (hello);</code>
 </p>
 
-<p><strong>malloc</strong> is used assign a set amount of memory for the arrays I'm crating.  What <strong>malloc</strong> does is ask for the memory from the heap.  If there is enough space the os gives me the amount of memory I asked for.
+<p>The function <strong>malloc</strong> is used assign a set amount of memory for the arrays I'm crating.  What <strong>malloc</strong> does is ask for the memory from the heap.  If there is enough space the os gives me the amount of memory I asked for.
   </p>
 
 <h3>Using Strings</h3>
 <p>When asking for user input use <code>fgets</code> function instead of the <code>scanf</code> function bc <emphasize>scanf</emphasize> leads to buffer overflow problems - it doesn't know how big the array being inputted will be and so completes the string when it sees the first space character.
 </p>
-<p><h4>The advantages of using <code>fgets</code></h4>
+<h4>The advantages of using <code>fgets</code></h4>
+<p>
 <ul>
   <li> It can read from files, if the file's pointer is passed in. (interchangeable with 'stdin')</li>
   <li> Returns a string if a string is successfully read from either the file or the stdin.</li>
 </ul>
 </p>
-<p><h4>HOW FGETS WORKS</h4>
-<br/>
+<h4>HOW FGETS WORKS</h4>
+<p>
 It reads input until either the user hits enter or the buffer is full. Then it reads all the characters except for the enter, or in the case it becomes full it will read up to (size - 1). Then in either case adds a null escape-character to complete the string it will return.
 </p>
   
