@@ -16,6 +16,8 @@ int main()
    * Added after initial compiling */
   // added to prevent fgets adding a newline escape-character bc
   // fgets newline automatically, unless there's no room for it
+  // the limit is 256 bc that is the length of the string that we
+  // are assigning as the space for the input
   for (int i = 0; i < 256; i++) {
 
     // replace the newline character in either case: added by
@@ -30,12 +32,12 @@ int main()
        
        REDUCED BY ONE THE 'i' WITHIN THE ELSE IF CONDITION*/
     // Codeblock03
-      if( i < 255 & string[i] == '\n')
+      if( i < 256 & string[i] == '\n')
 	{
 	  string[i] = '\0';
 	  break;
 	}
-      else if (i == 254 & string[i] != '\n')
+      else if (i == 255 & string[i] != '\n')
 	{
 	  string[i] = '\0';
 	  break;
@@ -43,7 +45,7 @@ int main()
     }
   /* end of CodeBlock02 */
 
-  printf( "You entered a this string:\n%s", string);
+  printf( "You entered a this string:\n%s\n", string);
 
   //  getchar();// Why use getchar()? - SPDL
 
