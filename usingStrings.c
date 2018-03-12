@@ -30,12 +30,12 @@ int main()
        
        REDUCED BY ONE THE 'i' WITHIN THE ELSE IF CONDITION*/
     // Codeblock03
-      if( i < 256 & string[i] == '\n')
+      if( i < 255 & string[i] == '\n')
 	{
 	  string[i] = '\0';
 	  break;
 	}
-      else if (i == 255 & string[i] != '\n')
+      else if (i == 254 & string[i] != '\n')
 	{
 	  string[i] = '\0';
 	  break;
