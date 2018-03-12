@@ -6,7 +6,7 @@ int main () {
    */
   char isThisAString[50] = "I should be a string.";
   puts(isThisAString);
-
+  free(isThisAString);
   
   /* Codeblock_02:
      initial compiling generated error - 
@@ -141,47 +141,14 @@ int main () {
   // declaring a string using pointers.
   // Initially I had problems declaring above and initializing here. Then I tried
   // declaring and initializing the variable 'willThisBeAnotherString' in the same line.
-  // Now I went back to separate declaration and initialization be re-allocating memory.
-  //  willThisBeAString = malloc( sizeof(*willThisBeAString) * 256);
+  // Now I went back to separate declaration and initialization re-allocating memory.
+  char *willThisBeAnotherString = malloc (sizeof(*willThisBeAString) * 256);
+  *willThisBeAnotherString = 'This is an even bigger string.';
+  
+  printf("%s\n", willThisBeAnotherString);
+  
   // freeing up the memory taken up by the string
-  willThisBeAString = 'This is an even bigger string.';
-  /*willThisBeAString[0] = 'T';
-  willThisBeAString[1] = 'h';
-  willThisBeAString[2] = 'i';
-  willThisBeAString[3] = 's';
-  willThisBeAString[4] = ' ';
-  willThisBeAString[5] = 'i';
-  willThisBeAString[6] = 's';
-  willThisBeAString[7] = ' ';
-  willThisBeAString[8] = 'a';
-  willThisBeAString[9] = 'n';
-  willThisBeAString[10] = ' ';
-  willThisBeAString[11] = 'e';
-  willThisBeAString[12] = 'v';
-  willThisBeAString[13] = 'e';
-  willThisBeAString[14] = 'n';
-  willThisBeAString[15] = ' ';
-  willThisBeAString[16] = 'b';
-  willThisBeAString[17] = 'i';
-  willThisBeAString[18] = 'g';
-  willThisBeAString[19] = 'g';
-  willThisBeAString[20] = 'e';
-  willThisBeAString[21] = 'r';
-  willThisBeAString[22] = ' ';
-  willThisBeAString[23] = 's';
-  willThisBeAString[24] = 't';
-  willThisBeAString[25] = 'r';
-  willThisBeAString[26] = 'i';
-  willThisBeAString[27] = 'n';
-  willThisBeAString[28] = 'g';
-  willThisBeAString[29] = '.';*/
-
-  printf("%s\n", willThisBeAString);
-    
-  /*for (int i = 0; i < 50; i++) {
-    printf("%c", willThisBeAString[i]);
-    }*/
-  //free (willThisBeAString);
+  free (willThisBeAnotherString);
   
   return 0;
 }
