@@ -10,6 +10,10 @@ int main()
   printf("Please enter a sentence:");
 
   // receive the input from the stdin
+  // through constant tinkering I found the size of the
+  // stdin buffer is 1017 characters. This is the number 
+  // of chars I can type in without the returned strings
+  // giving a repeating '^G'
   fgets (string, 256, stdin);
 
   /* CodeBlock02
