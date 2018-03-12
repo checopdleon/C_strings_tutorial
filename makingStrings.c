@@ -27,8 +27,12 @@ int main () {
   for(int i = 0; i<100; i++)
     puts("doing something else...");
   // delcare the string
-  //  willThisBeAString = {I am also a string.}; commented to compile after adding CodeBlock_03
+  // Delcaring a sting with the '= {}' syntax does not work. Next experiment is to try:
+  // '= {'I',' ','a','m',' ','a','l','s','o',' ','a',' ','s','t','r','i','n','g','.'}' syntax
+  willThisBeAString = "I am also a string.";
   puts(willThisBeAString);
+
+  free(willThisBeAString);
 
   /* Codeblock_03:
      initial compiling generated 2 warninngs and 1 error - 
@@ -80,10 +84,13 @@ int main () {
           ^
    */
   // declaring a string using pointers.
-  // Initially I had used 'willThisBeAString' initialized above,
-  // but now I'm declaring and initializing in the same line.
-  char *willThisBeAnotherString = malloc( sizeof(*willThisBeAString) * 256);
+  // Initially I had problems declaring above and initializing here. Then I tried
+  // declaring and initializing the variable 'willThisBeAnotherString' in the same line.
+  // Now I went back to separate declaration and initialization be re-allocating memory.
+  char *willThisBeAString = malloc( sizeof(*willThisBeAnotherString) * 256);
   // freeing up the memory taken up by the string
+  *willThisBeAString = "This is an even bigger string";
+  puts(willThisBeAString);
   free (willThisBeAString);
   
   return 0;
