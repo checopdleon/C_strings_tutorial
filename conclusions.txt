@@ -1,0 +1,35 @@
+Major discoveries:
+
+-) Coder must usually declare and initialize strings at the same time.
+   Eg:
+	char thisIsAString[50] = “I am a string literal because of the double quotes.”;
+
+-) String literals cannot be changed later on, which is an obvious one due to the stated variable type.
+   Eg:
+	char thisIsAString[50] = “I am a string literal.”;
+	… other code …
+	thisIsAString = ‘I have been changed?’;
+
+-) Can’t declare a string of a certain size and then later assign chars in the array using the “= [‘’,’’,…];” syntax or the ‘= “ “;’.
+   Eg:
+	char willThisBeAString[50];
+	… other code …
+	willThisBeAString = {‘A’,’m’,’ ‘,’I’,’ ‘,’a’,’ ‘,’s’,’t’,’r’,’i’,’n’,’g’,’?’};
+	The compiler says it was not the “expected expression.”
+   Eg:
+	char willThisBeAString[50];
+	… other code …
+	willThisBeAString = “Am I a string”;
+	The compiler says the “array type ‘char [50]’ is not assignable.”
+   Eg:
+	char willThisBeAString[50];
+	… other code …
+	willThisBeAString = ‘This is a bigger string.’;
+	Compiles just fine
+
+-) The type of ‘string variables’ cannot be changed.
+   Eg:
+	char willThisBeAString[50]
+	… other code …
+	willThisBeAString = malloc(sizeof(*willThisBeAString) * 256);
+	The compiler says the “array type ‘char[50]’ is not assignable.”
