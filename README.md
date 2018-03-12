@@ -35,4 +35,13 @@ It reads input until either the user hits enter or the buffer is full. Then it r
   
 
 <h2>To-Do's</h2><p>
-[] Read up on string literals and how they behave.
+<ul>
+  <li>Next step: read up on dynamically reallocating the stdin buffer. Here are some sites I've found already:
+    <ul>
+      <li>https://stackoverflow.com/questions/39360883/c-fgets-read-line-from-stdin-maximum-length-is-1024<li>
+      <li>https://stackoverflow.com/questions/25838676/read-from-stdin-in-c-without-max-buffer-length#25838715<li>
+      <li>https://stackoverflow.com/questions/8164000/how-to-dynamically-allocate-memory-space-for-a-string-and-get-that-string-from-u#8164021<li>
+    </ul>
+  </li>
+</ul>
+  
